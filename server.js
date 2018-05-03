@@ -40,3 +40,58 @@ app.post('/add', (req, res) => {
     })
 })
 
+app.all('/edit/:id', (req, res) => {
+    const {
+        id
+    } = req.params
+    
+    const _id = ObjectId(decodeURI(id))
+
+    db.collection('posts').findOne({
+        _id
+    }, function (err, result) {
+        if (err)
+            return err
+        res.render('update.ejs', {
+            posts: result
+        })
+    })
+})
+
+app.post('/update/:id', (req, res) => {
+    const {
+        id
+    } = req.params
+    
+    const _id = ObjectId(decodeURI(id))
+
+    db.collection('posts').findOneAndUpdate({
+        _id : _id
+    },
+    {
+        $set: {
+            title: req.body.title,
+            text: req.body.text
+        }    
+    }, function (err, result) {
+        if (err)
+            return err
+        res.redirect('/')
+    })
+})
+
+app.all('/delete/:id', (req, res) => {
+    const {
+        id
+    } = req.params
+    
+    const _id = ObjectId(decodeURI(id))
+    
+    db.collection('posts').remove({
+        _id
+    }, function (err, result) {
+        if (err)
+            return err
+        res.redirect('/')
+    })
+})

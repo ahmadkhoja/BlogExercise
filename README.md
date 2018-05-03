@@ -85,13 +85,13 @@ Now, the user shall be able to sort the posts by ID (default sorting), title (al
 
 Congratulations! You created a full Blog.
 
-## Optionals
-
-For those who want to have more fun, here are some additional tasks you might find interesting.
-
-#### Read More
+## Read More
 
 Only display the first 3 words of each post on the `index.ejs` page and give the option for the user to read full post on another page `read.ejs`. Use *`split()`*, *`slice()`* and *`join()`* functions.
+
+## Optional
+
+For those who want to have more fun, here are some additional tasks you might find interesting.
 
 #### Pagination
 
