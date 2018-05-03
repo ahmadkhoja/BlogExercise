@@ -45,6 +45,8 @@
                             <p>
                                 <span><%= posts[i].text %></span>
                             </p>
+                            <a href = "/edit/<%= posts[i]._id %>">Edit</a>
+                            <a href = "/delete/<%= posts[i]._id %>">Delete</a>
                         </li>
                         <% } %>
                 </ul>
