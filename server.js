@@ -8,17 +8,17 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 
-var db
+let db
 
 const MongoClient = require('mongodb').MongoClient
 const ObjectId = require('mongodb').ObjectId
 
 
-MongoClient.connect('mongodb://user1:user1@ds111410.mlab.com:11410/exercisedatabase', (err, database) => {
+MongoClient.connect('mongodb://ahmadyassin:ahmadyassin2524@ds115740.mlab.com:15740/omar_blog_excersise', (err, database) => {
     if (err) {
         return err
     }
-    db = database
+    db = database.db('omar_blog_excersise')
     app.listen(3000, () => {
         console.log('listening on 3000')
     })
